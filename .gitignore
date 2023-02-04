@@ -1,0 +1,9 @@
+.DS_Store
+out
+release
+*.command
+*.sh
+*.bat
+*.dat
+*.jar
+*.class
