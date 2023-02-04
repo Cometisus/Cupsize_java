@@ -6,9 +6,9 @@
 
 ## 使い方（簡易版）
 ### 起動
-Windows版：cupsize.batをダブルクリック
-Mac版：cupsize.commandをダブルクリック
-jar版：JDKをインストールし、Cupsize.jarをダブルクリック、もしくはコマンド実行（java -jar Cupsize.jar）
+- Windows版：cupsize.batをダブルクリック
+- Mac版：cupsize.commandをダブルクリック
+- jar版：JDKをインストールし、Cupsize.jarをダブルクリック、もしくはコマンド実行（java -jar Cupsize.jar）
 Java18.0.2での動作を確認しております。
 
 ### 入力
