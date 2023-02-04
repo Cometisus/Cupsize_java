@@ -7,3 +7,5 @@ release
 *.dat
 *.jar
 *.class
+.java-version
+
