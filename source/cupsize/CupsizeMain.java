@@ -552,7 +552,7 @@ public class CupsizeMain extends JFrame implements ActionListener {
 		StatisticsResult sr = cals.calcStatistics(rs, tm.getBustSizeData());
 		bustSizeProbabilityOutput.setText(sr.probability);
 		TScoreOutput.setText(sr.TScore);
-		charTScoreOutput.setText(String.format("%s\n%s",sr.charTScore,tm.rankStr(rs.getBustSize())));
+		charTScoreOutput.setText(String.format("%s\n%s", sr.charTScore, tm.rankStr(rs.getBustSize())));
 	}
 	
 	private ResultStrage startCalc() {
