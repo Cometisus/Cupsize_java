@@ -403,4 +403,16 @@ class TableManager {
 		
 		return sortElements(this.current_se, this.current_d);
 	}
+	
+	private int calcRank(double bustSize) {
+		int rank = 1;
+		for (TableDataStruct data : originalCharacterList) {
+			if (data.bustSize > bustSize) rank++;
+		}
+		return rank;
+	}
+	
+	public String rankStr(double bustSize) {
+		return String.format("%d位", calcRank(bustSize));
+	}
 }
