@@ -203,11 +203,37 @@ public class Calculate {
 		double bustIndex = rs.getBust() / height;
 		double bustSizeIndex = rs.getBustSize() / height;
 		double proportionIndex = rs.getBust() * height * hip / (rs.getUnderBust() * rs.getWaist() * rs.getWaist());
-		double pi = (rs.getWaist() + 2 * thigh - hip - rs.getBustSize()) / height;
+		double pi = (rs.getWaist() + 2 * thigh - hip - rs.getBustSize()) / height * 100;
 		rs.input( new DataStruct( DataType.PI, pi ) );
 		rs.input( new DataStruct( DataType.PROPORTION_INDEX, proportionIndex ) );
 		rs.input( new DataStruct( DataType.BUST_INDEX, bustIndex ) );
 		rs.input( new DataStruct( DataType.BUST_SIZE_INDEX, bustSizeIndex ) );
+		rs.inputString( DataType.PI_STATUS, statusPI(pi) );
+		rs.inputString( DataType.BUST_INDEX_STATUS, statusBustIndex(bustIndex) );
+	}
+	
+	private String statusPI(double pi) {
+		if (pi < 30) {
+			return "メリハリプラチナ";
+		} else if (pi < 35) {
+			return "メリハリゴールド";
+		} else if (pi < 37.5) {
+			return "メリハリシルバー";
+		} else if (pi < 42.5) {
+			return "普通体型";
+		}
+		return "チャレンジ体型";
+	}
+	
+	private String statusBustIndex(double bi) {
+		if (bi < 0.5) {
+			return "貧弱バスト";
+		} else if (bi < 0.54) {
+			return "標準バスト";
+		} else if (bi < 0.56) {
+			return "美しいバスト";
+		}
+		return "大きなバスト";
 	}
 	
 	private void calcIndex() {

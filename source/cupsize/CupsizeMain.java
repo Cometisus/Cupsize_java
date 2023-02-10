@@ -43,6 +43,8 @@ public class CupsizeMain extends JFrame implements ActionListener {
 	private JTextField BustSizeIndexOutput;
 	private JTextField ProportionIndexOutput;
 	private JTextField PIOutput;
+	private JTextField PIStatusOutput;
+	private JTextField BustIndexStatusOutput;
 	private JTextField BMIOutput;
 	private JTextField BMIStatusOutput;
 	private JTextField NewBMIOutput;
@@ -353,12 +355,16 @@ public class CupsizeMain extends JFrame implements ActionListener {
 		wm.wigdgetGBLInit("rl");
 		BustIndexOutput = wm.addInputTextGBL("バスト指数 : ", 20);
 		BustIndexOutput.setEditable(false);
+		BustIndexStatusOutput = wm.addInputTextGBL("判定 : ", 20);
+		BustIndexStatusOutput.setEditable(false);
 		BustSizeIndexOutput = wm.addInputTextGBL("バストサイズ指数 : ", 20);
 		BustSizeIndexOutput.setEditable(false);
 		ProportionIndexOutput = wm.addInputTextGBL("プロポーション指数 : ", 20);
 		ProportionIndexOutput.setEditable(false);
 		PIOutput = wm.addInputTextGBL("PI : ", 20);
 		PIOutput.setEditable(false);
+		PIStatusOutput = wm.addInputTextGBL("判定 : ", 20);
+		PIStatusOutput.setEditable(false);
 		return wm.setWidgetGBL("バスト関連体格指数");
 	}
 	
@@ -366,11 +372,11 @@ public class CupsizeMain extends JFrame implements ActionListener {
 		wm.wigdgetGBLInit("rl");
 		BMIOutput = wm.addInputTextGBL("BMI : ", 20);
 		BMIOutput.setEditable(false);
-		BMIStatusOutput = wm.addInputTextGBL("BMI判定 : ", 20);
+		BMIStatusOutput = wm.addInputTextGBL("判定 : ", 20);
 		BMIStatusOutput.setEditable(false);
 		NewBMIOutput = wm.addInputTextGBL("新しいBMI : ", 20);
 		NewBMIOutput.setEditable(false);
-		NewBMIStatusOutput = wm.addInputTextGBL("新しいBMI判定 : ", 20);
+		NewBMIStatusOutput = wm.addInputTextGBL("判定 : ", 20);
 		NewBMIStatusOutput.setEditable(false);
 		SuitableWeightOutput = wm.addInputTextGBL("適正体重 : ", 20);
 		SuitableWeightOutput.setEditable(false);
@@ -540,9 +546,11 @@ public class CupsizeMain extends JFrame implements ActionListener {
 			setText(SuitableWeightOutput, rs.getSuitableWeight());
 			setText(CosmeticWeightOutput, rs.getCosmeticWeight());
 			setText(PIOutput, rs.getPI());
+			setText(PIStatusOutput, rs.getPIStatus());
 			setText(ProportionIndexOutput, rs.getProportionIndex());
 			setText(BustSizeIndexOutput, rs.getBustSizeIndex());
 			setText(BustIndexOutput, rs.getBustIndex());
+			setText(BustIndexStatusOutput, rs.getBustIndexStatus());
 		} else {
 			GCPanel.setVisible(false);
 		}

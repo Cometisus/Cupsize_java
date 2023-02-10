@@ -22,6 +22,8 @@ public class ResultStrage implements Cloneable {
 	private String braAdvice;
 	private String bmiStatus;
 	private String newBmiStatus;
+	private String PIStatus;
+	private String bustIndexStatus;
 	private double bmi;
 	private double newBmi;
 	private double cosmeticWeight;
@@ -150,6 +152,12 @@ public class ResultStrage implements Cloneable {
 			case NEW_BMI_STATUS:
 				this.newBmiStatus = d;
 				break;
+			case PI_STATUS:
+				this.PIStatus = d;
+				break;
+			case BUST_INDEX_STATUS:
+				this.bustIndexStatus = d;
+				break;
 		}
 	}
 	
@@ -239,6 +247,14 @@ public class ResultStrage implements Cloneable {
 	
 	public String getNewBMIStatus() {
 		return this.newBmiStatus;
+	}
+	
+	public String getPIStatus() {
+		return this.PIStatus;
+	}
+	
+	public String getBustIndexStatus() {
+		return this.bustIndexStatus;
 	}
 	
 	public double getBMI() {
